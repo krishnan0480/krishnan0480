@@ -6,7 +6,8 @@ import requests
 def get_bot_response(message):
     # Here you would integrate with your AI model or service
     # For demonstration, we'll just echo the message back
-    return "Bot says: " + message
+    response="Hello! You said:n " + message
+    return response
 
 # Streamlit page configuration
 st.set_page_config(page_title='AgriBot', layout='wide')
@@ -23,7 +24,7 @@ if st.button('Send'):
     # Get the bot response
     response = get_bot_response(user_input)
     # Display the response
-    st.write(response)
+    st.text_area('Chatbot Respopnse:",calue=response,height=100)
 
 # Display information about real-time soil testing, pest detection, etc.
 st.markdown("""
@@ -45,4 +46,6 @@ st.markdown("""
 ## Note:
 This is a prototype interface. Features like real-time soil testing, pest detection, and autonomous operations will be integrated with IoT devices and AI models to provide accurate assistance to farmers.
 """)
+
+
 
